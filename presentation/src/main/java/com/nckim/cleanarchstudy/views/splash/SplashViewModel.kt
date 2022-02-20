@@ -13,20 +13,10 @@ class SplashViewModel @Inject constructor(private val getLoginUseCase: GetLoginU
     @Inject
     lateinit var setLoginUseCase: SetLoginUseCase
 
-    init {
-        Log.e("NCTEST", "SplashViewModel init")
-    }
 
     fun doSplash(){
-        Log.e("NCTEST", "doSplash " + getLoginUseCase.excute())
+
         setLoginUseCase.excute(true)
-        Log.e("NCTEST", "doSplash " + getLoginUseCase.excute())
-        setLoginUseCase.excute(false)
-        Log.e("NCTEST", "doSplash " + getLoginUseCase.excute())
-//        if(getLoginUseCase.excute()){
-//            Log.e("NCTEST", "true")
-//        }else{
-//            Log.e("NCTEST", "false")
-//        }
+
     }
 }

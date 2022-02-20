@@ -6,7 +6,6 @@ import javax.inject.Inject
 
 class SetLoginUseCase @Inject constructor(private val repository: LoginRepository){
     fun excute(success: Boolean){
-        Log.e("NCTEST", "SetLoginUseCase $success" )
         repository.autoLogin = success
     }
 }
