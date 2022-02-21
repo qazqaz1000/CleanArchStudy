@@ -10,8 +10,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(private val setLoginUseCase: SetLoginUseCase): ViewModel(){
-    val _id : MutableLiveData<String> = MutableLiveData("가")
-    val _pw : MutableLiveData<String> = MutableLiveData("나")
+    val _id : MutableLiveData<String> = MutableLiveData("")
+    val _pw : MutableLiveData<String> = MutableLiveData("")
 
     private val _isIDEmpty : MutableLiveData<Unit> = MutableLiveData()
     private val _isPWEmpty : MutableLiveData<Unit> = MutableLiveData()
@@ -26,14 +26,13 @@ class LoginViewModel @Inject constructor(private val setLoginUseCase: SetLoginUs
 
 
     fun onClickLogin(){
-        Log.e("NCTEST", "id : ${_id.value.toString()} , pw : ${_pw.value.toString()}")
         val id = _id.value.toString()
         val pw = _pw.value.toString()
         if(id.isEmpty()){
             _isIDEmpty.value = Unit
         }else if(pw.isEmpty()){
             _isPWEmpty.value = Unit
-        }else if(id == USER_ID && id == USER_PW){
+        }else if(id == USER_ID && pw == USER_PW){
             setLoginUseCase.excute(true)
             _isSuccess.value = Unit
         }else{
