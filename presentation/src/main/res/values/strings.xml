@@ -2,5 +2,10 @@
     <string name="app_name">CleanArchStudy</string>
     <string name="activity_login_id">아이디를 입력해주세요</string>
     <string name="activity_login_pw">비밀번호를 입력해주세요</string>
-    <string name="activity_login_login_text">로그인</string>
+    <string name="activity_login_loginbutton_text">로그인</string>
+    <string name="activity_login_auto_true">자동로그인 되었습니다.</string>
+    <string name="activity_login_auto_false">로그인 정보가 없습니다. 로그인 해주세요.</string>
+
+    <string name="activity_movie_search_hint">영화명 검색</string>
+    <string name="activity_movie_searchbutton_text">검색</string>
 </resources>

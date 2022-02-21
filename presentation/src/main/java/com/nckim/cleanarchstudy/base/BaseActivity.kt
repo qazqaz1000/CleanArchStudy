@@ -1,7 +1,6 @@
 package com.nckim.cleanarchstudy.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +12,8 @@ abstract class BaseActivity<B : ViewDataBinding>(@LayoutRes val layoutId:Int) : 
     lateinit var binding: B
     private val compositeDisposable = CompositeDisposable()
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutId)
         binding.lifecycleOwner = this
     }
