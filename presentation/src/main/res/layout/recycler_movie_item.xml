@@ -12,49 +12,71 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/appcolor"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/mv_poster"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            bind:urlImage="@{movie.image}"
+
             >
+<!--            bind:urlImage="@{movie.image}"-->
 
         </ImageView>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="4">
+            android:layout_weight="4"
+            android:layout_marginLeft="10dp">
 
             <TextView
                 android:id="@+id/tv_movie_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></TextView>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                bind:htmlText="@{movie.title}"
+                ></TextView>
 
             <RatingBar
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:isIndicator="true"
+                android:max="10"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:layout_weight="1"
+                >
 
             </RatingBar>
 
             <TextView
                 android:id="@+id/tv_movie_date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></TextView>
+                android:layout_height="wrap_content"
+                android:text="@{movie.pubDate}"
+                android:layout_weight="1"
+                ></TextView>
 
             <TextView
                 android:id="@+id/tv_movie_director"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></TextView>
+                android:layout_height="wrap_content"
+                android:text="@{movie.director}"
+                android:layout_weight="1"
+                ></TextView>
 
             <TextView
                 android:id="@+id/tv_movie_actor"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></TextView>
+                android:layout_height="wrap_content"
+                android:text="@{movie.actor}"
+                android:layout_weight="1"
+                ></TextView>
         </LinearLayout>
 
 
