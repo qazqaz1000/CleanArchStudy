@@ -1,4 +1,4 @@
-package com.nckim.data.repository.di
+package com.nckim.data.di
 
 import com.nckim.data.repository.login.LoginRepositoryImpl
 import com.nckim.data.repository.login.local.LoginLocalDataSource

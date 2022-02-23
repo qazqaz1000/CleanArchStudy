@@ -1,4 +1,4 @@
-package com.nckim.data.repository.di
+package com.nckim.data.di
 
 import android.content.Context
 import com.nckim.data.repository.login.PreferenceManager
