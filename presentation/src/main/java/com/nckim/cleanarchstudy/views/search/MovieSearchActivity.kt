@@ -12,9 +12,24 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MovieSearchActivity : BaseActivity<ActivityMovieSearchBinding>(R.layout.activity_movie_search) {
     private val movieSearchViewModel : MovieSearchViewModel by viewModels()
+    private lateinit var movieAdapter : MovieAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.vm = movieSearchViewModel
+        initAdapter()
+
     }
+
+    private fun initAdapter(){
+
+    }
+
+    private fun initViewModelCallback(){
+        with(movieSearchViewModel){
+
+        }
+    }
+
+
 }
