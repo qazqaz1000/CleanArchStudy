@@ -19,8 +19,8 @@ interface ApiInterface {
     @GET("v1/search/movie.json")
     fun getSearchMovie(
         @Query("query") query: String,
-        @Query("query") start: Int = 1,
-        @Query("query") display: Int = 15,
+        @Query("start") start: Int = 1,
+        @Query("display") display: Int = 15,
     ): Single<MovieResponse>
 
     companion object{
