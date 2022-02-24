@@ -10,4 +10,15 @@
 
     <string name="activity_movie_search_hint">영화명 검색</string>
     <string name="activity_movie_searchbutton_text">검색</string>
+
+    <string name="last_page_msg">마지막 페이지 입니다</string>
+
+    <string name="search_input_query_msg">검색어를 입력해주세요</string>
+    <string name="network_error_msg">네트워크 에러</string>
+    <string name="load_movie_success_msg">영화 불러오기 성공</string>
+    <string name="no_movie_error_msg">영화가 없습니다</string>
+    <string name="error_msg">실패</string>
+    <string name="local_db_msg">로컬에서 불러오기</string>
+
+
 </resources>

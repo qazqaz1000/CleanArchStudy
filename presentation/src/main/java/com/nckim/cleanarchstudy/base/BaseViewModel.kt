@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 
-class BaseViewModel : ViewModel(){
+abstract class BaseViewModel : ViewModel(){
     protected val compositeDisposable = CompositeDisposable()
     private val _isLoading = MutableLiveData<Boolean>(false)
     val isLoading: LiveData<Boolean>

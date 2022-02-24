@@ -60,6 +60,13 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.8.1'
 
+    // Room
+    implementation "androidx.room:room-runtime:2.2.6"
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
 //모듈 의존성
     implementation project(':domain')
     implementation project(':data')

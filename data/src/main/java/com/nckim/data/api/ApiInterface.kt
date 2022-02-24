@@ -11,9 +11,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
+import com.nckim.data.utils.CLIENT_ID
+import com.nckim.data.utils.CLIENT_SECRET
 
-const val clientId = "ZdiaeLQbLVaYAQODPAUH" //애플리케이션 클라이언트 아이디값"
-const val clientSecret = "vY8uGx7Sqm" //애플리케이션 클라이언트 시크릿값"
 
 interface ApiInterface {
     @GET("v1/search/movie.json")
@@ -32,8 +32,8 @@ interface ApiInterface {
             val interceptor = Interceptor{ chain ->
                 with(chain){
                     val newReqest = request().newBuilder()
-                        .addHeader("X-Naver-Client-Id", clientId)
-                        .addHeader("X-Naver-Client-Secret", clientSecret)
+                        .addHeader("X-Naver-Client-Id", CLIENT_ID)
+                        .addHeader("X-Naver-Client-Secret", CLIENT_SECRET)
                         .build()
                     proceed(newReqest)
                 }
