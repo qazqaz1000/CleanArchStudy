@@ -20,9 +20,8 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-
+            bind:urlImage="@{movie.image}"
             >
-<!--            bind:urlImage="@{movie.image}"-->
 
         </ImageView>
 
@@ -50,6 +49,7 @@
                 android:numStars="5"
                 android:stepSize="0.1"
                 android:layout_weight="1"
+                bind:movieRating="@{movie.userRating}"
                 >
 
             </RatingBar>
