@@ -17,6 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".views.search.MovieSearchActivity"
+            android:windowSoftInputMode="adjustResize"
+
             android:exported="false" />
         <activity
             android:name=".views.splash.SplashActivity"
@@ -29,4 +31,12 @@
         </activity>
     </application>
 
+<!--    API level 30 이상에서부터 필요 -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
 </manifest>

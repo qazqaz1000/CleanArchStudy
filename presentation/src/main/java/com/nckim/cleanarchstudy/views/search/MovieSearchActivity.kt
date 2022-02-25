@@ -30,6 +30,7 @@ class MovieSearchActivity : BaseActivity<ActivityMovieSearchBinding>(R.layout.ac
             Intent(Intent.ACTION_VIEW, Uri.parse(movie.link)).takeIf {
                 it.resolveActivity(packageManager) != null
             }?.run (this::startActivity)
+//            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(movie.link)))
         }
         binding.recyclerMovie.adapter = movieAdapter
     }
