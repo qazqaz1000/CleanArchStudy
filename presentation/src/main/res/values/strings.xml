@@ -20,5 +20,9 @@
     <string name="error_msg">실패</string>
     <string name="local_db_msg">로컬에서 불러오기</string>
 
+    <string name="bottom_movie">영화</string>
+    <string name="bottom_github">깃허브</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
