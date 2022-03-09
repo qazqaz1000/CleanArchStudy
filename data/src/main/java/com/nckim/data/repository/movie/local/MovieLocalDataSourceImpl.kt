@@ -1,7 +1,7 @@
-package com.nckim.data.repository.search.local
+package com.nckim.data.repository.movie.local
 
 import com.nckim.data.db.MovieDao
-import com.nckim.data.model.search.MovieEntity
+import com.nckim.data.model.movie.MovieEntity
 import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject

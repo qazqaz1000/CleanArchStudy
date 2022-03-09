@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.nckim.cleanarchstudy.utils.EndlessRecyclerViewScrollListener
 import com.nckim.cleanarchstudy.views.search.MovieAdapter
 import com.nckim.cleanarchstudy.views.search.MovieSearchViewModel
-import com.nckim.domain.model.search.Movie
+import com.nckim.domain.model.movie.Movie
 
 
 @BindingAdapter("htmlText")

@@ -22,7 +22,8 @@
 
     <string name="bottom_movie">영화</string>
     <string name="bottom_github">깃허브</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="fragment_github_search_hint">깃 리파지토리 검색</string>
+    <string name="fragment_github_searchbutton_text">검색</string>
 
 </resources>

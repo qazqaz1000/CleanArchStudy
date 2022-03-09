@@ -1,7 +1,11 @@
 package com.nckim.data.mapper
 
-import com.nckim.data.model.search.MovieEntity
-import com.nckim.domain.model.search.Movie
+import com.nckim.data.model.github.GithubRepository
+import com.nckim.data.model.github.GithubResponse
+import com.nckim.data.model.movie.MovieEntity
+import com.nckim.domain.model.github.GithubModel
+import com.nckim.domain.model.github.GithubRepositoryModel
+import com.nckim.domain.model.movie.Movie
 
 fun mapperToMovie(movies: List<MovieEntity>): List<Movie> {
     return movies.toList().map {
@@ -17,3 +21,18 @@ fun mapperToMovie(movies: List<MovieEntity>): List<Movie> {
         )
     }
 }
+
+
+fun mapperToGithubRepository(githubRepositories: List<GithubRepository>): List<GithubRepositoryModel> {
+    return githubRepositories.toList().map {
+        GithubRepositoryModel(
+            it.id,
+            it.fullName,
+            it.htmlUrl,
+            it.description,
+            it.stargazersCount,
+            it.owner.avatarUrl
+        )
+    }
+}
+

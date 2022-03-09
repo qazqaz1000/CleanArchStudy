@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nckim.cleanarchstudy.R
 import com.nckim.cleanarchstudy.databinding.RecyclerMovieItemBinding
-import com.nckim.domain.model.search.Movie
+import com.nckim.domain.model.movie.Movie
 
 class MovieAdapter(private val itemClick: (Movie) -> Unit) :
     ListAdapter<Movie, MovieAdapter.ViewHolder>(

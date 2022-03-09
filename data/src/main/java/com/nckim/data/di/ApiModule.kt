@@ -1,6 +1,7 @@
 package com.nckim.data.di
 
-import com.nckim.data.api.ApiInterface
+import com.nckim.data.api.GithubApiInterface
+import com.nckim.data.api.NaverApiInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,8 +13,14 @@ import javax.inject.Singleton
 class ApiModule {
     @Provides
     @Singleton
-    fun provideApiInterface(): ApiInterface{
-        return ApiInterface.create()
+    fun provideNaverApiInterface(): NaverApiInterface{
+        return NaverApiInterface.createNaverApi()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGithubApiInterface(): GithubApiInterface{
+        return GithubApiInterface.createGithubApi()
     }
 
 }

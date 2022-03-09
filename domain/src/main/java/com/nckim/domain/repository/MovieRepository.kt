@@ -1,6 +1,6 @@
 package com.nckim.domain.repository
 
-import com.nckim.domain.model.search.Movie
+import com.nckim.domain.model.movie.Movie
 import io.reactivex.Flowable
 import io.reactivex.Single
 

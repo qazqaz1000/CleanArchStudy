@@ -1,4 +1,4 @@
-package com.nckim.data.model.search
+package com.nckim.data.model.movie
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.nckim.data.model.search
+package com.nckim.data.model.movie
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:bind="http://schemas.android.com/apk/res-auto"
->
+    >
     <data>
         <variable
-            name="movie"
-            type="com.nckim.domain.model.movie.Movie" />
+            name="github"
+            type="com.nckim.domain.model.github.GithubRepositoryModel" />
     </data>
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,14 +15,11 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/mv_poster"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            bind:urlImage="@{movie.image}"
-            >
+            bind:urlImage="@{github.avatarUrl}"/>
 
-        </ImageView>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -33,53 +29,31 @@
             android:layout_marginLeft="10dp">
 
             <TextView
-                android:id="@+id/tv_movie_name"
+                android:id="@+id/tv_github_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                bind:htmlText="@{movie.title}"
+                bind:htmlText="@{github.fullName}"
                 ></TextView>
 
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Widget.AppCompat.RatingBar.Small"
-                android:isIndicator="true"
-                android:max="10"
-                android:numStars="5"
-                android:stepSize="0.1"
-                android:layout_weight="1"
-                bind:movieRating="@{movie.userRating}"
-                >
-
-            </RatingBar>
 
             <TextView
-                android:id="@+id/tv_movie_date"
+                android:id="@+id/tv_github_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{movie.pubDate}"
+                android:text="@{github.description}"
                 android:layout_weight="1"
                 ></TextView>
 
             <TextView
-                android:id="@+id/tv_movie_director"
+                android:id="@+id/tv_github_stargazerscount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{movie.director}"
+                android:text="@{github.stargazersCount}"
                 android:layout_weight="1"
                 ></TextView>
 
-            <TextView
-                android:id="@+id/tv_movie_actor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{movie.actor}"
-                android:layout_weight="1"
-                ></TextView>
         </LinearLayout>
 
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 </layout>

@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import com.nckim.data.model.search.MovieEntity
+import com.nckim.data.model.movie.MovieEntity
 import io.reactivex.Completable
 import io.reactivex.Single
 

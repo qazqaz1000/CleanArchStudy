@@ -1,8 +1,8 @@
 package com.nckim.data.di
 
-import com.nckim.data.api.ApiInterface
-import com.nckim.data.repository.search.remote.MovieRemoteDataSource
-import com.nckim.data.repository.search.remote.MovieRemoteDataSourceImpl
+import com.nckim.data.api.NaverApiInterface
+import com.nckim.data.repository.movie.remote.MovieRemoteDataSource
+import com.nckim.data.repository.movie.remote.MovieRemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 class RemoteDataModule {
     @Provides
     @Singleton
-    fun provideMovieRemoteDataSource(apiInterface: ApiInterface): MovieRemoteDataSource{
-        return MovieRemoteDataSourceImpl(apiInterface)
+    fun provideMovieRemoteDataSource(naverApiInterface: NaverApiInterface): MovieRemoteDataSource{
+        return MovieRemoteDataSourceImpl(naverApiInterface)
     }
 }

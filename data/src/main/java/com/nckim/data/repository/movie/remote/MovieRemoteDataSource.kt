@@ -1,6 +1,6 @@
-package com.nckim.data.repository.search.remote
+package com.nckim.data.repository.movie.remote
 
-import com.nckim.data.model.search.MovieResponse
+import com.nckim.data.model.movie.MovieResponse
 import io.reactivex.Single
 
 interface  MovieRemoteDataSource {

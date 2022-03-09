@@ -7,8 +7,8 @@ import com.nckim.data.db.MovieDatabase
 import com.nckim.data.repository.login.PreferenceManager
 import com.nckim.data.repository.login.local.LoginLocalDataSource
 import com.nckim.data.repository.login.local.LoginLocalDataSourceImpl
-import com.nckim.data.repository.search.local.MovieLocalDataSource
-import com.nckim.data.repository.search.local.MovieLocalDataSourceImpl
+import com.nckim.data.repository.movie.local.MovieLocalDataSource
+import com.nckim.data.repository.movie.local.MovieLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,7 +1,9 @@
 package com.nckim.data.api
 
-import com.nckim.data.api.ApiClient.BASE_URL
-import com.nckim.data.model.search.MovieResponse
+import com.nckim.data.api.ApiClient.GITHUB_BASE_URL
+import com.nckim.data.model.github.GithubResponse
+import com.nckim.data.utils.CLIENT_ID
+import com.nckim.data.utils.CLIENT_SECRET
 import io.reactivex.Single
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -11,20 +13,17 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
-import com.nckim.data.utils.CLIENT_ID
-import com.nckim.data.utils.CLIENT_SECRET
 
-
-interface ApiInterface {
-    @GET("v1/search/movie.json")
-    fun getSearchMovie(
-        @Query("query") query: String,
-        @Query("start") start: Int = 1,
-        @Query("display") display: Int = 15,
-    ): Single<MovieResponse>
+interface GithubApiInterface {
+    @GET("search/repositories")
+    fun getGithubRepository(
+        @Query("q") query: String,
+        @Query("page") page: Int = 1,
+        @Query("per_page") perPage: Int = 15,
+    ) : Single<GithubResponse>
 
     companion object{
-        fun create(): ApiInterface{
+        fun createGithubApi(): GithubApiInterface{
             val logger = HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BASIC
             }
@@ -41,16 +40,15 @@ interface ApiInterface {
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logger)
-                .addInterceptor(interceptor)
                 .build()
 
             return Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(GITHUB_BASE_URL)
                 .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(ApiInterface::class.java)
+                .create(GithubApiInterface::class.java)
         }
     }
 }
