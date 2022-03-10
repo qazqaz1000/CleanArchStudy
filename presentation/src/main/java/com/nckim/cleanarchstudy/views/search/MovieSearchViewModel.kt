@@ -82,8 +82,10 @@ class MovieSearchViewModel @Inject constructor(
         )
     }
 
-
-    fun requestLocalMovies(){
+    override fun onEndlessScroll(){
+        requestLocalMovies()
+    }
+    private fun requestLocalMovies(){
         compositeDisposable.add(
             getLocalMoviesUseCase.excute(currentQuery)
                 .subscribeOn(Schedulers.io())

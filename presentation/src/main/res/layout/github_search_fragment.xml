@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/appcolor"
-        tools:context=".views.search.MovieSearchActivity">
+        tools:context=".views.home.HomeActivity">
 
         <EditText
             android:id="@+id/search_edit"
@@ -35,7 +35,7 @@
             android:layout_height="0dp"
             android:layout_margin="8dp"
             android:text="@string/fragment_github_searchbutton_text"
-            android:onClick="@{()->vm.requestMovie()}"
+            android:onClick="@{()->vm.requestGithubList()}"
             app:layout_constraintBottom_toTopOf="@id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="2"
@@ -50,12 +50,12 @@
             app:layout_constraintGuide_begin="80dp"></androidx.constraintlayout.widget.Guideline>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_movie"
+            android:id="@+id/recycler_github"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="8dp"
             bind:endlessScroll="@{vm}"
-            bind:setItems="@{vm.movieList}"
+            bind:setGithubItems="@{vm.githubList}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
