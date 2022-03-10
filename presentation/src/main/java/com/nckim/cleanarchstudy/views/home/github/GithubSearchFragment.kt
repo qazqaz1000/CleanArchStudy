@@ -29,9 +29,9 @@ class GithubSearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.github_search_fragment, container, false)
-//        binding.lifecycleOwner = this
-//        binding.vm = viewModel
-//        initAdapter()
+        binding.lifecycleOwner = this
+        binding.vm = viewModel
+        initAdapter()
         return binding.root
 //        return inflater.inflate(R.layout.github_search_fragment, container, false)
     }

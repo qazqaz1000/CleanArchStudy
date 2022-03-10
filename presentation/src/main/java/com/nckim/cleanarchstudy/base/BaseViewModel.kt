@@ -26,7 +26,7 @@ abstract class BaseViewModel : ViewModel(){
         super.onCleared()
     }
 
-    open fun onEndlessScroll(){
+    open fun onEndlessScroll(offset: Int){
 
     }
 }

@@ -9,11 +9,11 @@ data class GithubModel(
 
 data class GithubRepositoryModel(
     val id: Long,
-    val fullName: String,
-    val htmlUrl: String,
-    val description: String,
+    val fullName: String?,
+    val htmlUrl: String?,
+    val description: String?,
     val stargazersCount: Int,
-    val avatarUrl: String
+    val avatarUrl: String?
 )
 
 //data class GithubRepositoryOwnerModel(

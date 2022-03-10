@@ -69,7 +69,7 @@ class MovieSearchViewModel @Inject constructor(
                 .subscribe({ movies ->
                     val pagingMovieList = _movieList.value
                     pagingMovieList?.addAll(movies)
-                    _movieList.value = pagingMovieList
+                    _movieList.value = pagingMovieList!!
                     _toastMsg.value = MessageSet.SUCCESS
                 }, {
                     when(it.message){
@@ -82,9 +82,10 @@ class MovieSearchViewModel @Inject constructor(
         )
     }
 
-    override fun onEndlessScroll(){
-        requestLocalMovies()
+    override fun onEndlessScroll(offset: Int){
+        requestPagingMovie(offset)
     }
+
     private fun requestLocalMovies(){
         compositeDisposable.add(
             getLocalMoviesUseCase.excute(currentQuery)

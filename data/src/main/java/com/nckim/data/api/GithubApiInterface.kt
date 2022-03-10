@@ -19,7 +19,7 @@ interface GithubApiInterface {
     fun getGithubRepository(
         @Query("q") query: String,
         @Query("page") page: Int = 1,
-        @Query("per_page") perPage: Int = 15,
+        @Query("per_page") perPage: Int = 10,
     ) : Single<GithubResponse>
 
     companion object{
@@ -28,15 +28,15 @@ interface GithubApiInterface {
                 level = HttpLoggingInterceptor.Level.BASIC
             }
 
-            val interceptor = Interceptor{ chain ->
-                with(chain){
-                    val newReqest = request().newBuilder()
-                        .addHeader("X-Naver-Client-Id", CLIENT_ID)
-                        .addHeader("X-Naver-Client-Secret", CLIENT_SECRET)
-                        .build()
-                    proceed(newReqest)
-                }
-            }
+//            val interceptor = Interceptor{ chain ->
+//                with(chain){
+//                    val newReqest = request().newBuilder()
+//                        .addHeader("X-Naver-Client-Id", CLIENT_ID)
+//                        .addHeader("X-Naver-Client-Secret", CLIENT_SECRET)
+//                        .build()
+//                    proceed(newReqest)
+//                }
+//            }
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logger)
