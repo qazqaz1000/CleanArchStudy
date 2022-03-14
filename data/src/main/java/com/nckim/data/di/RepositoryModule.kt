@@ -2,9 +2,9 @@ package com.nckim.data.di
 
 import com.nckim.data.repository.login.LoginRepositoryImpl
 import com.nckim.data.repository.login.local.LoginLocalDataSource
-import com.nckim.data.repository.search.MovieRepositoryImpl
-import com.nckim.data.repository.search.local.MovieLocalDataSource
-import com.nckim.data.repository.search.remote.MovieRemoteDataSource
+import com.nckim.data.repository.movie.MovieRepositoryImpl
+import com.nckim.data.repository.movie.local.MovieLocalDataSource
+import com.nckim.data.repository.movie.remote.MovieRemoteDataSource
 import com.nckim.domain.repository.LoginRepository
 import com.nckim.domain.repository.MovieRepository
 import dagger.Module

@@ -8,6 +8,8 @@ import androidx.lifecycle.Observer
 import com.nckim.cleanarchstudy.R
 import com.nckim.cleanarchstudy.base.BaseActivity
 import com.nckim.cleanarchstudy.databinding.ActivityLoginBinding
+import com.nckim.cleanarchstudy.views.IS_HOME_ACTIVITY
+import com.nckim.cleanarchstudy.views.home.HomeActivity
 import com.nckim.cleanarchstudy.views.search.MovieSearchActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,7 +46,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     private fun success(){
         finish()
         showToast(getString(R.string.activity_login_true))
-        startActivity(Intent(this, MovieSearchActivity::class.java))
+        if(IS_HOME_ACTIVITY){
+            startActivity(Intent(this, HomeActivity::class.java))
+        }else{
+            startActivity(Intent(this, MovieSearchActivity::class.java))
+        }
     }
 
 

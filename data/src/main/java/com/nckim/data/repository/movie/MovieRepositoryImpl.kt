@@ -1,11 +1,11 @@
-package com.nckim.data.repository.search
+package com.nckim.data.repository.movie
 
 import com.nckim.data.mapper.mapperToMovie
-import com.nckim.data.repository.search.local.MovieLocalDataSource
-import com.nckim.data.repository.search.remote.MovieRemoteDataSource
+import com.nckim.data.repository.movie.local.MovieLocalDataSource
+import com.nckim.data.repository.movie.remote.MovieRemoteDataSource
 import com.nckim.data.utils.LAST_PAGE
 import com.nckim.data.utils.NO_DATA_FROM_LOCAL_DB
-import com.nckim.domain.model.search.Movie
+import com.nckim.domain.model.movie.Movie
 import com.nckim.domain.repository.MovieRepository
 import io.reactivex.Flowable
 import io.reactivex.Single

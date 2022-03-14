@@ -1,4 +1,4 @@
-package com.nckim.domain.model.search
+package com.nckim.domain.model.movie
 
 data class Movie(
     val actor: String,

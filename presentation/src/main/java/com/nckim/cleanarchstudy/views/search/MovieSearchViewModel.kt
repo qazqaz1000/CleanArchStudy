@@ -2,11 +2,10 @@ package com.nckim.cleanarchstudy.views.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.nckim.cleanarchstudy.base.BaseViewModel
 import com.nckim.cleanarchstudy.utils.NetworkManager
 import com.nckim.data.utils.LAST_PAGE
-import com.nckim.domain.model.search.Movie
+import com.nckim.domain.model.movie.Movie
 import com.nckim.domain.usecase.GetLocalMoviesUseCase
 import com.nckim.domain.usecase.GetMoviesUseCase
 import com.nckim.domain.usecase.GetPagingMoviesUseCase
@@ -70,7 +69,7 @@ class MovieSearchViewModel @Inject constructor(
                 .subscribe({ movies ->
                     val pagingMovieList = _movieList.value
                     pagingMovieList?.addAll(movies)
-                    _movieList.value = pagingMovieList
+                    _movieList.value = pagingMovieList!!
                     _toastMsg.value = MessageSet.SUCCESS
                 }, {
                     when(it.message){
@@ -83,8 +82,11 @@ class MovieSearchViewModel @Inject constructor(
         )
     }
 
+    override fun onEndlessScroll(offset: Int){
+        requestPagingMovie(offset)
+    }
 
-    fun requestLocalMovies(){
+    private fun requestLocalMovies(){
         compositeDisposable.add(
             getLocalMoviesUseCase.excute(currentQuery)
                 .subscribeOn(Schedulers.io())

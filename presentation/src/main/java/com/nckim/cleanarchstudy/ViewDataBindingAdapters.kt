@@ -9,10 +9,13 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.nckim.cleanarchstudy.base.BaseViewModel
 import com.nckim.cleanarchstudy.utils.EndlessRecyclerViewScrollListener
+import com.nckim.cleanarchstudy.views.home.github.GithubAdapter
 import com.nckim.cleanarchstudy.views.search.MovieAdapter
 import com.nckim.cleanarchstudy.views.search.MovieSearchViewModel
-import com.nckim.domain.model.search.Movie
+import com.nckim.domain.model.github.GithubRepositoryModel
+import com.nckim.domain.model.movie.Movie
 
 
 @BindingAdapter("htmlText")
@@ -39,12 +42,20 @@ fun RecyclerView.setAdapterItem(items: MutableList<Movie>?){
     }
 }
 
+@BindingAdapter("setGithubItems")
+fun RecyclerView.setGithubAdapterItem(items: MutableList<GithubRepositoryModel>?){
+    items?.let{
+        (adapter as GithubAdapter).submitList(it.toMutableList())
+    }
+}
+
 
 @BindingAdapter("endlessScroll")
-fun RecyclerView.setEndlessScroll(vm: MovieSearchViewModel){
+fun RecyclerView.setEndlessScroll(vm: BaseViewModel){
     val scrollListener = object : EndlessRecyclerViewScrollListener(layoutManager as LinearLayoutManager){
         override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
-            vm.requestPagingMovie(totalItemsCount + 1)
+//            vm.requestPagingMovie(totalItemsCount + 1)
+            vm.onEndlessScroll(totalItemsCount + 1)
         }
     }
     addOnScrollListener(scrollListener)

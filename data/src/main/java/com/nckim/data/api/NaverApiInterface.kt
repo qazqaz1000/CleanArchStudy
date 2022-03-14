@@ -1,7 +1,7 @@
 package com.nckim.data.api
 
-import com.nckim.data.api.ApiClient.BASE_URL
-import com.nckim.data.model.search.MovieResponse
+import com.nckim.data.api.ApiClient.NAVER_BASE_URL
+import com.nckim.data.model.movie.MovieResponse
 import io.reactivex.Single
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -15,7 +15,7 @@ import com.nckim.data.utils.CLIENT_ID
 import com.nckim.data.utils.CLIENT_SECRET
 
 
-interface ApiInterface {
+interface NaverApiInterface {
     @GET("v1/search/movie.json")
     fun getSearchMovie(
         @Query("query") query: String,
@@ -24,7 +24,7 @@ interface ApiInterface {
     ): Single<MovieResponse>
 
     companion object{
-        fun create(): ApiInterface{
+        fun createNaverApi(): NaverApiInterface{
             val logger = HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BASIC
             }
@@ -45,12 +45,12 @@ interface ApiInterface {
                 .build()
 
             return Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(NAVER_BASE_URL)
                 .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(ApiInterface::class.java)
+                .create(NaverApiInterface::class.java)
         }
     }
 }

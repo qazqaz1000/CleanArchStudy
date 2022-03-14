@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.nckim.cleanarchstudy.R
+import com.nckim.cleanarchstudy.views.IS_HOME_ACTIVITY
+import com.nckim.cleanarchstudy.views.home.HomeActivity
 import com.nckim.cleanarchstudy.views.login.LoginActivity
 import com.nckim.cleanarchstudy.views.search.MovieSearchActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,7 +43,11 @@ open class SplashActivity : AppCompatActivity() {
     private fun startMovie(){
         showToast(getString(R.string.activity_login_auto_true))
         finish()
-        startActivity(Intent(this, MovieSearchActivity::class.java))
+        if(IS_HOME_ACTIVITY){
+            startActivity(Intent(this, HomeActivity::class.java))
+        }else{
+            startActivity(Intent(this, MovieSearchActivity::class.java))
+        }
     }
 
     private fun startLogin(){
