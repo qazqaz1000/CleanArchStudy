@@ -22,6 +22,7 @@ class MovieSearchViewModel @Inject constructor(
     private val networkManager: NetworkManager
 ) : BaseViewModel(){
 
+    
     private var currentQuery: String = ""
     val query = MutableLiveData<String>()
     private val _movieList = MutableLiveData<MutableList<Movie>>()
