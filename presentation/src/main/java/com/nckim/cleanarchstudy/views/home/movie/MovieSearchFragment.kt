@@ -74,6 +74,8 @@ class MovieSearchFragment : Fragment() {
                         R.string.error_msg))
                     MovieSearchViewModel.MessageSet.LOCAL_SUCCESS -> act.showToast(getString(
                         R.string.local_db_msg))
+
+                    else -> {}
                 }
             })
         }

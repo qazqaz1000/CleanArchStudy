@@ -47,6 +47,7 @@ class MovieSearchActivity : BaseActivity<ActivityMovieSearchBinding>(R.layout.ac
                     MovieSearchViewModel.MessageSet.NO_RESULT -> showToast(getString(R.string.no_movie_error_msg))
                     MovieSearchViewModel.MessageSet.ERROR -> showToast(getString(R.string.error_msg))
                     MovieSearchViewModel.MessageSet.LOCAL_SUCCESS -> showToast(getString(R.string.local_db_msg))
+                    else -> {}
                 }
             })
         }

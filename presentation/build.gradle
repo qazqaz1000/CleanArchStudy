@@ -8,12 +8,12 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 android {
-    compileSdk 31
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.nckim.cleanarchstudy"
         minSdk 24
-        targetSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -27,16 +27,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     dataBinding{
         enabled = true
     }
+    namespace 'com.nckim.cleanarchstudy'
 }
 
 dependencies {
@@ -54,8 +55,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //viewModels 사용하기위함
-    implementation 'androidx.activity:activity-ktx:1.1.0'
-    implementation 'androidx.fragment:fragment-ktx:1.2.5'
+    implementation 'androidx.activity:activity-ktx:1.8.2'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
 
     //rxjava
     implementation "io.reactivex.rxjava2:rxjava:2.2.17"
@@ -64,7 +65,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.8.1'
 
     // Room
-    implementation "androidx.room:room-runtime:2.2.6"
+    implementation "androidx.room:room-runtime:2.6.1"
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
@@ -75,8 +76,8 @@ dependencies {
     implementation project(':data')
 
     //hilt
-    implementation "com.google.dagger:hilt-android:2.38"
-    kapt "com.google.dagger:hilt-compiler:2.38"
+    implementation "com.google.dagger:hilt-android:2.43.2"
+    kapt "com.google.dagger:hilt-compiler:2.43.2"
 
     //meterial
     implementation 'com.google.android.material:material:1.2.0'
